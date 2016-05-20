@@ -5,15 +5,20 @@
    <script charset="utf-8">
      var apiKey = '45592332';
      var sessionId = '2_MX40NTU5MjMzMn5-MTQ2MzcwOTQ3ODY0OX55ODNubHZaWWUrb3JGUitQVXIvU3pwNEV-fg';
-     var token = 'T1==cGFydG5lcl9pZD00NTU5MjMzMiZzaWc9MjhjYTk5NmJjMGMzY2UyM2IzYmNkODEyZDdkNzMwYzhiYzExNDQ4MTpzZXNzaW9uX2lkPTJfTVg0ME5UVTVNak16TW41LU1UUTJNemN3T1RRM09EWTBPWDU1T0ROdWJIWmFXV1VyYjNKR1VpdFFWWEl2VTNwd05FVi1mZyZjcmVhdGVfdGltZT0xNDYzNzA5NDk4Jm5vbmNlPTAuMjUzNzk2NDM0NDk1NTk4MSZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDYzNzk1ODk5';
+     var token = 'T1==cGFydG5lcl9pZD00NTU5MjMzMiZzaWc9YzU0MmNkZjdlNDJjZTM0OTZiNWVmNWJiMTkwODM3Zjk5NDZlNjlmNjpzZXNzaW9uX2lkPTJfTVg0ME5UVTVNak16TW41LU1UUTJNemN3T1RRM09EWTBPWDU1T0ROdWJIWmFXV1VyYjNKR1VpdFFWWEl2VTNwd05FVi1mZyZjcmVhdGVfdGltZT0xNDYzNzI2MDA2Jm5vbmNlPTAuOTQzOTQ3NzQ0MzIyOTQwNyZyb2xlPXN1YnNjcmliZXImZXhwaXJlX3RpbWU9MTQ2MzgxMjQwNQ==';
+     
      var session = OT.initSession(apiKey, sessionId)
-       .on('streamCreated', function(event) {
-         session.subscribe(event.stream);
-       })
-       .connect(token, function(error) {
-         var publisher = OT.initPublisher();
-         session.publish(moderator);
-       });
+     session.connect( token, function(err) {
+      if(err){
+        alert("there is an error!");
+      }else{
+        session.subscribe();
+      }
+     });
+     session.on("streamCreated", function(event){
+      session.subscribe( event.stream );
+    });
    </script>
  </body>
 </html>
+
