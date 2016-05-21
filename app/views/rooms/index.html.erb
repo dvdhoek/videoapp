@@ -4,20 +4,27 @@
    <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
    <script charset="utf-8">
      var apiKey = '45592332';
-     var sessionId = '2_MX40NTU5MjMzMn5-MTQ2MzcwOTQ3ODY0OX55ODNubHZaWWUrb3JGUitQVXIvU3pwNEV-fg';
-     var token = 'T1==cGFydG5lcl9pZD00NTU5MjMzMiZzaWc9MjhjYTk5NmJjMGMzY2UyM2IzYmNkODEyZDdkNzMwYzhiYzExNDQ4MTpzZXNzaW9uX2lkPTJfTVg0ME5UVTVNak16TW41LU1UUTJNemN3T1RRM09EWTBPWDU1T0ROdWJIWmFXV1VyYjNKR1VpdFFWWEl2VTNwd05FVi1mZyZjcmVhdGVfdGltZT0xNDYzNzA5NDk4Jm5vbmNlPTAuMjUzNzk2NDM0NDk1NTk4MSZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDYzNzk1ODk5';
+     var sessionId = '1_MX40NTU5MjMzMn5-MTQ2MzgwMTY0NTgyM345cGp4cGdRWnFrUWR4dXRRYTl5a29lRUp-fg';
+     var token = 'T1==cGFydG5lcl9pZD00NTU5MjMzMiZzaWc9MjFlMmUyMzQxMDgzM2Y1MTk1OTU0MzYzYjNiNjE0MjQ1MmZhZGVlYTpzZXNzaW9uX2lkPTFfTVg0ME5UVTVNak16TW41LU1UUTJNemd3TVRZME5UZ3lNMzQ1Y0dwNGNHZFJXbkZyVVdSNGRYUlJZVGw1YTI5bFJVcC1mZyZjcmVhdGVfdGltZT0xNDYzODAxNjY3Jm5vbmNlPTAuMDM5MTI2Njc1ODA4ODAyMjUmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTQ2NDQwNjQ2NQ==';
      var session = OT.initSession(apiKey, sessionId)
        .on('streamCreated', function(event) {
          session.subscribe(event.stream);
        })
        .connect(token, function(error) {
          var publisher = OT.initPublisher();
-         session.publish();
+         session.publish(publisher);
        });
    </script>
 
-<!--   <div class="video">
+  <div class="video">
     <div id="publisher" style='border: solid;'></div>
-  </div> -->
+  </div>
+  <div class="video">
+    <div id="publisher" style='border: solid;'></div>
+  </div>
  </body>
 </html>
+
+1500 "Session.publish :: Could not publish in a reasonable amount of time"
+OT.Publisher State Change Failed:  'Destroyed' cannot transition to 'Publishing'
+OT.Publisher State Change Failed:  'Failed' cannot transition to 'MediaBound'
