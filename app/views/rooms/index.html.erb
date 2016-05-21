@@ -1,30 +1,21 @@
-<!DOCTYPE HTML>
-<html>
- <body>
-   <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
-   <script charset="utf-8">
-     var apiKey = '45592332';
-     var sessionId = '1_MX40NTU5MjMzMn5-MTQ2MzgwMTY0NTgyM345cGp4cGdRWnFrUWR4dXRRYTl5a29lRUp-fg';
-     var token = 'T1==cGFydG5lcl9pZD00NTU5MjMzMiZzaWc9MjFlMmUyMzQxMDgzM2Y1MTk1OTU0MzYzYjNiNjE0MjQ1MmZhZGVlYTpzZXNzaW9uX2lkPTFfTVg0ME5UVTVNak16TW41LU1UUTJNemd3TVRZME5UZ3lNMzQ1Y0dwNGNHZFJXbkZyVVdSNGRYUlJZVGw1YTI5bFJVcC1mZyZjcmVhdGVfdGltZT0xNDYzODAxNjY3Jm5vbmNlPTAuMDM5MTI2Njc1ODA4ODAyMjUmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTQ2NDQwNjQ2NQ==';
-     var session = OT.initSession(apiKey, sessionId)
-       .on('streamCreated', function(event) {
-         session.subscribe(event.stream);
-       })
-       .connect(token, function(error) {
-         var publisher = OT.initPublisher();
-         session.publish(publisher);
-       });
-   </script>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Hello Swift</title>
+    <script src="//static.opentok.com/webrtc/v2.2/js/TB.min.js"></script>
+    <script type="text/javascript">
+        var apiKey = '<%= @api_key %>';
+        var sessionId = '<%= @session_id %>';
+        var token = '<%= @token %>';
+    </script>
 
-  <div class="video">
-    <div id="publisher" style='border: solid;'></div>
-  </div>
-  <div class="video">
-    <div id="publisher" style='border: solid;'></div>
-  </div>
- </body>
+</head>
+<body>
+    <h2>Hello, Swift!</h2>
+
+    <div id="publisher"></div>
+
+    <div id="subscribers"></div>
+</body>
 </html>
-
-1500 "Session.publish :: Could not publish in a reasonable amount of time"
-OT.Publisher State Change Failed:  'Destroyed' cannot transition to 'Publishing'
-OT.Publisher State Change Failed:  'Failed' cannot transition to 'MediaBound'

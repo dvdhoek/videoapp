@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 
-gem "opentok", "~> 0.0.92"
+gem 'opentok'
 
 gem 'pg'
 # Use SCSS for stylesheets
