@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-$( document ).ready(function() {
+
 // Initialize an OpenTok Session object
 var session = TB.initSession(sessionId);
 
@@ -48,4 +48,3 @@ session.on({
 
 // Connect to the Session using the 'apiKey' of the application and a 'token' for permission
 session.connect(apiKey, token);
-});
