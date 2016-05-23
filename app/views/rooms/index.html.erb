@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>Hello Swift</title>
@@ -9,15 +10,28 @@
         var sessionId = '<%= @session_id %>';
         var token = '<%= @token %>';
     </script>
-<%= javascript_include_tag 'application' %>
-
-
+    <%= javascript_include_tag 'application' %>
 </head>
+
+<center>
 <body>
-    <h2>Hello, Swift!</h2>
 
-    <div id="publisher"></div>
+<div class="pie degree" id="timer">
+  <span class="block"></span>
+  <span id="time">10</span>
+</div>
 
-    <div id="subscribers"></div>
+<h2>Hello, Swift!</h2>
+<br><br>
+<!-- Always make sure there is a container around the stream. If not, everything collapses when the connection is lost -->
+<div id="container-subscriber"> <!-- This is the outer container -->
+    <div id="subscribers"></div> <!-- This is the div for the subscriber dont apply css -->
+        <div id="container-publisher"> <!-- This is the container for the publisher -->
+            <div id="publisher"></div> <!-- This is the div for the publisher container dont apply css -->
+        </div>
+</div>
+<a href="javascript:disconnect()"> Disconnect </a> <!-- The disconnect button sends js command to disconnect --> 
+<a href="javascript:startTimer()"> Start Timer </a>
 </body>
+</center>
 </html>
